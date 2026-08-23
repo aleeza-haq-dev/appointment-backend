@@ -1,4 +1,4 @@
 fastapi
 uvicorn
-sqlalachemy
+sqlalchemy
 pydantic
