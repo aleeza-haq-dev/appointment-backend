@@ -18,7 +18,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 class Appointment(Base):
-    _tablename_ = "appointments"
+    __tablename__ = "appointments"
 
     id = Column(Integer, primary_key=True, index=True)
     patient_name = Column(String, index=True)
@@ -38,5 +38,5 @@ def get_db():
      finally:
           db.close()
 
-if _name=="main_":
+if __name__=="__main__":
         init_db()
