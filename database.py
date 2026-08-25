@@ -38,5 +38,5 @@ def get_db():
      finally:
           db.close()
 
-if _name=="main_":
+if __name=="main__":
         init_db()
