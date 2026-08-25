@@ -39,4 +39,4 @@ def get_db():
           db.close()
 
 if _name=="main_":
-        init_db(
+        init_db()
