@@ -43,6 +43,12 @@ from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 
 app = FastAPI()
+from fastapi.middleware(
+  CORSMiddleware,
+  allow_origins=["*"],
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
 
 from sqlalchemy import select, func
 
