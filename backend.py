@@ -98,13 +98,13 @@ def cancel_appointment(request: CancelAppointmentRequest, db: Session = Depends(
 
     appointments = result.scalars().all()
     if not appointments:
-       return HTTPException(status_code=404, detail= "no matching appointment for the details found in our system")
+       raise HTTPException(status_code=404, detail= "no matching appointment for the details found in our system")
 
     for appointment in appointments:
         appointment.canceled = True
         db.commit()
 
-        return CancelAppointmentResponse(canceled_count=len(appointments))
+    return CancelAppointmentResponse(canceled_count=len(appointments))
 #list appt
 
 @app.get("/list_appointments/")
